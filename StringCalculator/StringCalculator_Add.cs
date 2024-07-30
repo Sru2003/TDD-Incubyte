@@ -26,7 +26,7 @@
 
         [Theory]
         [InlineData("3,2", 5)]
-        public void ReturnsNumberWhen2NumbersGiven(String value, int expectedValue)
+        public void ReturnsSumWhen2NumbersGiven(String value, int expectedValue)
         {
             var calculator = new StringCalculator();
 
@@ -37,7 +37,19 @@
 
         [Theory]
         [InlineData("1,2,3,4,5,6", 21)]
-        public void ReturnsNumberWhen6NumbersGiven(String value, int expectedValue)
+        public void ReturnsSumWhen6NumbersGiven(String value, int expectedValue)
+        {
+            var calculator = new StringCalculator();
+
+            var result = calculator.Add(value);
+
+            Assert.Equal(expectedValue, result);
+        }
+
+        [Theory]
+        [InlineData("1,\n2,3,4,5,6", 21)]
+        [InlineData("2,\n\n2,\n3",7)]
+        public void ReturnsSumIgnoringNewline(String value, int expectedValue)
         {
             var calculator = new StringCalculator();
 

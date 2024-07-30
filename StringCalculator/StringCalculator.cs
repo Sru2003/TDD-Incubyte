@@ -6,7 +6,7 @@ namespace StringCalculator
         {
             if(String.IsNullOrEmpty(value))
                 return 0;
-
+            value = value.Replace("\n", "");
             var result = value.Split(',')
             .Select(s => int.Parse(s))
             .Sum();
