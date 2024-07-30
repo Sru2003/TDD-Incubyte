@@ -6,7 +6,11 @@ namespace StringCalculator
         {
             if(String.IsNullOrEmpty(value))
                 return 0;
-            return int.Parse(value);
+
+            var result = value.Split(',')
+            .Select(s => int.Parse(s))
+            .Sum();
+            return result;
         }
     }
 }
