@@ -57,5 +57,16 @@
 
             Assert.Equal(expectedValue, result);
         }
+
+        [Theory]
+        [InlineData("//;\n1;2", 3)]
+        public void ReturnsSumIgnoringCustomDelimitors(String value, int expectedValue)
+        {
+            var calculator = new StringCalculator();
+
+            var result = calculator.Add(value);
+
+            Assert.Equal(expectedValue, result);
+        }
     }
 }
