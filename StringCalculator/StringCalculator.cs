@@ -4,15 +4,18 @@ namespace StringCalculator
 {
     public class StringCalculator
     {
+        private int CalledCount = 0;
         internal object Add(string value)
         {
-            if(String.IsNullOrEmpty(value))
+            CalledCount++;
+
+            if (String.IsNullOrEmpty(value))
                 return 0;
 
 
             if (value.StartsWith("//"))
             {
-      
+
 
                 value = Regex.Replace(value, "//(.*?)\n"
 , "");
@@ -30,8 +33,13 @@ namespace StringCalculator
             {
                 throw new NegativeNumberException("Negative numbers are not allowed: " + string.Join(", ", negatives));
             }
-            var result=numberList.Sum();
+            var result = numberList.Sum();
             return result;
+        }
+
+        public int GetCalledCount()
+        {
+            return CalledCount;
         }
     }
 

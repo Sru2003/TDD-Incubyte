@@ -82,5 +82,17 @@
             Assert.Equal(expectedValue, exception.Message);
         }
 
+        [Fact]
+        public void Returns0WhenGetCalledCountInitially()
+        {
+            var calculator = new StringCalculator();
+
+            var count = calculator.GetCalledCount();
+
+            Assert.Equal(0, count);
+        }
+
+
+
     }
 }
