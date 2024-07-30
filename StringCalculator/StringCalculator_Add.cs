@@ -11,5 +11,16 @@
 
             Assert.Equal(0, result);
         }
+
+        [Theory]
+        [InlineData("1",1)]
+        public void Returns1WhenEmptyString(String value,int expectedValue)
+        {
+            var calculator = new StringCalculator();
+
+            var result = calculator.Add(value);
+
+            Assert.Equal(expectedValue, result);
+        }
     }
 }

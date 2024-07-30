@@ -4,7 +4,9 @@ namespace StringCalculator
     {
         internal object Add(string value)
         {
-            return 0;
+            if(String.IsNullOrEmpty(value))
+                return 0;
+            return 1;
         }
     }
 }
