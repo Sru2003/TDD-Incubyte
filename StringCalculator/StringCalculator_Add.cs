@@ -93,6 +93,18 @@
         }
 
 
+        [Fact]
+        public void ReturnsCorrectCountAfterAddCalled()
+        {
+            var calculator = new StringCalculator();
+
+            calculator.Add("1,2");
+            calculator.Add("3,4");
+
+            var count = calculator.GetCalledCount();
+
+            Assert.Equal(2, count);
+        }
 
     }
 }
