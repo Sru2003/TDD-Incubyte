@@ -6,7 +6,7 @@ namespace StringCalculator
         {
             if(String.IsNullOrEmpty(value))
                 return 0;
-            return 1;
+            return int.Parse(value);
         }
     }
 }

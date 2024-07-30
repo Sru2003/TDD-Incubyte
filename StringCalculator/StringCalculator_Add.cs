@@ -14,6 +14,7 @@
 
         [Theory]
         [InlineData("1",1)]
+        [InlineData("2",2)]
         public void Returns1WhenEmptyString(String value,int expectedValue)
         {
             var calculator = new StringCalculator();
