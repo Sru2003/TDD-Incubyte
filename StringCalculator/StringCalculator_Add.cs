@@ -1,5 +1,6 @@
 ﻿namespace StringCalculator
 {
+   
     public class StringCalculator_Add
     {
         [Fact]
@@ -68,5 +69,17 @@
 
             Assert.Equal(expectedValue, result);
         }
+
+        [Theory]
+        [InlineData("-3,4", "Negative numbers are not allowed: -3")]
+        public void ThrowsNegativeNumberException(string value, string expectedValue)
+        {
+            var calculator = new StringCalculator();
+
+            var exception = Assert.Throws<NegativeNumberException>(() => calculator.Add(value));
+
+            Assert.Equal(expectedValue, exception.Message);
+        }
+
     }
 }
