@@ -72,6 +72,7 @@
 
         [Theory]
         [InlineData("-3,4", "Negative numbers are not allowed: -3")]
+        [InlineData("-1,-2", "Negative numbers are not allowed: -1, -2")]
         public void ThrowsNegativeNumberException(string value, string expectedValue)
         {
             var calculator = new StringCalculator();
