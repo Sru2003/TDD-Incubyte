@@ -34,5 +34,16 @@
 
             Assert.Equal(expectedValue, result);
         }
+
+        [Theory]
+        [InlineData("1,2,3,4,5,6", 21)]
+        public void ReturnsNumberWhen6NumbersGiven(String value, int expectedValue)
+        {
+            var calculator = new StringCalculator();
+
+            var result = calculator.Add(value);
+
+            Assert.Equal(expectedValue, result);
+        }
     }
 }
