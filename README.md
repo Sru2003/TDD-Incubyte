@@ -90,16 +90,6 @@ dotnet test
    - Increment count each time `Add` is called.
    - Provide count via `GetCalledCount` method.
 
----
-
-
-![String Calculator](https://via.placeholder.com/728x90.png)
-
----
-
-## Labels
-
-![Label](https://img.shields.io/badge/Status-Active-green)
 
 ---
 
